@@ -1,0 +1,13 @@
+{
+  "name": "ai-quiz-show",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Real-time quiz game inspired by Kahoot for admin, big screen, and mobile players.",
+  "main": "server.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.js"
+  }
+}
