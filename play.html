@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quiz Show Player</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body class="player-page">
+    <main class="phone-shell">
+      <section id="joinPanel" class="join-panel">
+        <div class="brand-mark center">
+          <span class="brand-icon">Q</span>
+          <div>
+            <strong>Quiz Show</strong>
+            <small>Player</small>
+          </div>
+        </div>
+        <label for="pinInput">รหัสห้อง</label>
+        <input id="pinInput" type="text" inputmode="numeric" maxlength="6" placeholder="123456">
+        <label for="nameInput">ชื่อเล่น</label>
+        <input id="nameInput" type="text" maxlength="28" placeholder="ใส่ชื่อของคุณ">
+        <button id="joinBtn" class="big-button" type="button">เข้าร่วมเกม</button>
+        <p id="joinError" class="error-text"></p>
+      </section>
+
+      <section id="playerPanel" class="player-panel hidden">
+        <header class="player-header">
+          <span id="playerName">Player</span>
+          <strong id="playerScore">0 pts</strong>
+        </header>
+        <div id="playerStatus" class="player-status">รอแอดมินเริ่มเกม</div>
+        <div id="mobileAnswers" class="mobile-answers hidden"></div>
+        <div id="answerFeedback" class="answer-feedback hidden"></div>
+      </section>
+    </main>
+    <script src="/play.js"></script>
+  </body>
+</html>

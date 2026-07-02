@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quiz Show Admin</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body class="admin-page">
+    <main class="app-shell">
+      <aside class="sidebar">
+        <div class="brand-mark">
+          <span class="brand-icon">Q</span>
+          <div>
+            <strong>Quiz Show</strong>
+            <small>Admin Studio</small>
+          </div>
+        </div>
+        <button id="newSetBtn" class="primary-action" type="button">สร้างชุดคำถาม</button>
+        <div id="setList" class="set-list"></div>
+      </aside>
+
+      <section class="workbench">
+        <header class="topbar">
+          <div>
+            <h1 id="setTitleView">เลือกชุดคำถาม</h1>
+            <p id="setMeta">สร้าง แก้ไข และเปิดห้องเกมจากหน้านี้</p>
+          </div>
+          <div class="topbar-actions">
+            <a class="ghost-button" href="/screen" target="_blank">เปิดจอใหญ่</a>
+            <button id="saveSetBtn" class="solid-button" type="button">บันทึก</button>
+          </div>
+        </header>
+
+        <div class="admin-grid">
+          <section class="editor-panel">
+            <div class="form-row">
+              <label for="titleInput">ชื่อชุดคำถาม</label>
+              <input id="titleInput" type="text" maxlength="80" placeholder="เช่น รอบชิงชนะเลิศ">
+            </div>
+            <div class="form-row">
+              <label for="descInput">คำอธิบาย</label>
+              <textarea id="descInput" rows="2" maxlength="240" placeholder="รายละเอียดสั้น ๆ"></textarea>
+            </div>
+            <div class="panel-head">
+              <h2>คำถาม</h2>
+              <button id="addQuestionBtn" class="small-button" type="button">เพิ่มคำถาม</button>
+            </div>
+            <div id="questionEditor" class="question-editor"></div>
+          </section>
+
+          <section class="live-panel">
+            <div class="panel-head">
+              <h2>ห้องเล่นสด</h2>
+              <span id="sessionBadge" class="status-pill">ยังไม่เปิดห้อง</span>
+            </div>
+            <button id="createSessionBtn" class="big-button" type="button">สร้างห้อง + QR</button>
+            <div id="roomCard" class="room-card hidden">
+              <div>
+                <small>รหัสเข้าห้อง</small>
+                <strong id="pinView">------</strong>
+              </div>
+              <canvas id="qrCanvas" width="260" height="260"></canvas>
+              <p id="joinUrl" class="join-url"></p>
+              <div class="control-grid">
+                <button id="startBtn" class="solid-button" type="button">Start</button>
+                <button id="revealBtn" class="ghost-button" type="button">เฉลย</button>
+                <button id="nextBtn" class="solid-button" type="button">ข้อต่อไป</button>
+                <button id="endBtn" class="danger-button" type="button">จบเกม</button>
+              </div>
+            </div>
+            <div class="scoreboard">
+              <h3>ผู้เล่นในห้อง</h3>
+              <div id="playerList" class="player-list empty-state">ยังไม่มีผู้เล่น</div>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+    <script src="/qr.js"></script>
+    <script src="/admin.js"></script>
+  </body>
+</html>

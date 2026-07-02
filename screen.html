@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quiz Show Screen</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body class="screen-page">
+    <main class="screen-stage">
+      <section id="connectPanel" class="screen-connect">
+        <div class="brand-mark center">
+          <span class="brand-icon">Q</span>
+          <div>
+            <strong>Quiz Show</strong>
+            <small>Live Screen</small>
+          </div>
+        </div>
+        <label for="pinInput">ใส่รหัสห้องเพื่อแสดงจอเกม</label>
+        <div class="pin-row">
+          <input id="pinInput" type="text" inputmode="numeric" maxlength="6" placeholder="123456">
+          <button id="connectBtn" class="solid-button" type="button">เชื่อมต่อ</button>
+        </div>
+      </section>
+
+      <section id="gamePanel" class="game-panel hidden">
+        <header class="screen-header">
+          <div>
+            <small id="roundLabel">Lobby</small>
+            <h1 id="screenTitle">รอผู้เล่นเข้าห้อง</h1>
+          </div>
+          <div class="pin-display">
+            <span>PIN</span>
+            <strong id="screenPin">------</strong>
+          </div>
+        </header>
+
+        <section id="lobbyView" class="lobby-view">
+          <div class="join-block">
+            <canvas id="screenQr" width="300" height="300"></canvas>
+            <div>
+              <p>สแกน QR หรือเข้าเว็บ</p>
+              <strong id="screenJoinUrl"></strong>
+              <span id="screenPlayerCount">0 ผู้เล่น</span>
+            </div>
+          </div>
+          <div id="lobbyPlayers" class="lobby-players"></div>
+        </section>
+
+        <section id="questionView" class="question-view hidden">
+          <div class="question-main">
+            <div id="timerRing" class="timer-ring">20</div>
+            <h2 id="questionText"></h2>
+            <img id="questionImage" class="question-image hidden" alt="">
+          </div>
+          <div id="answerGrid" class="answer-grid"></div>
+        </section>
+
+        <section id="winnerView" class="winner-view hidden">
+          <h2>ผู้ชนะ 5 อันดับ</h2>
+          <div id="winnerList" class="winner-list"></div>
+        </section>
+      </section>
+    </main>
+    <script src="/qr.js"></script>
+    <script src="/audio.js"></script>
+    <script src="/screen.js"></script>
+  </body>
+</html>
